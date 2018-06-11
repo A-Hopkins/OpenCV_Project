@@ -1,31 +1,22 @@
-#include "opencv2/opencv.hpp"
-#include "opencv2/highgui/highgui.hpp"
+#include <opencv2/highgui/highgui.hpp>
+#include <opencv2/imgproc/imgproc.hpp>
+#include <iostream>
 
-using namespace cv;
 
-int main(int argc, char** argv) {
+int main() {
+    cv::VideoCapture stream1(0);   //0 is the id of video device.0 if you have only one camera.
 
-    //create a gui window:
-    namedWindow("Output",1);
+    if (!stream1.isOpened()) { //check if video device has been initialised
+        std::cout << "cannot open camera";
+    }
 
-    //initialize a 120X350 matrix of black pixels:
-    Mat output = Mat::zeros( 120, 350, CV_8UC3 );
-
-    //write text on the matrix:
-    putText(output,
-            "Hello World :)",
-            cvPoint(15,70),
-            FONT_HERSHEY_PLAIN,
-            3,
-            cvScalar(0,255,0),
-            4);
-
-    //display the image:
-    imshow("Output", output);
-
-    //wait for the user to press any key:
-    waitKey(0);
-
+    //unconditional loop
+    while (true) {
+        cv::Mat cameraFrame;
+        stream1.read(cameraFrame);
+        imshow("cam", cameraFrame);
+        if (cv::waitKey(30) >= 0)
+            break;
+    }
     return 0;
-
 }

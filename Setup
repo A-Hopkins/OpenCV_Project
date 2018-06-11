@@ -12,7 +12,7 @@ that seem like you don't have g++ in your path variables it might be due to your
 4) In cmake-gui press the configure button and then generate after picking what you want
 5) Navigate to your build folder that you assigned cmake-gui to output, and run the mingw32-make command in command prompt
 6) After the mingw32-make command is done running (it may take awhile),run mingw32-make install
-7) Add user environment variable '~\Opencv_lib\bin\install' and then path variable '~\Opencv_lib\bin\install' ** for example
+7) Add user environment variable OPENCV_DIR='~\opencv\build\install' and then path variable '~\opencv\build\install\x86\mingw\bin' ** for example
 8) For clion add in the CMakeLists.txt
     ```
     cmake_minimum_required(VERSION 3.3)

@@ -1,0 +1,10 @@
+# OpenCV Project
+This is a living document to chronicle the development of an OpenCV project to use computer vision to track user 
+hand gestures and perform computer actions based on those gestures.
+
+## The Idea
+The idea will be to see a full fledged application that runs in the background of an operating system and uses the web 
+camera of the computer to track the user and looks for 'trigger' hand gestures to scroll a web page or switch tabs for 
+example.
+
+This project is starting with very limited knowledge of OpenCV and a working knowledge of C++.
